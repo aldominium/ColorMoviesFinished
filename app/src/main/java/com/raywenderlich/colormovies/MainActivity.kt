@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Razeware LLC
+ * Copyright (c) 2018 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,11 +28,11 @@
  * THE SOFTWARE.
  */
 
-package aldominium.com.colormovies
+package com.raywenderlich.colormovies
 
-import aldominium.com.colormovies.models.MovieResponse
-import aldominium.com.colormovies.models.Review
-import aldominium.com.colormovies.service.NYTimesReviews
+import com.raywenderlich.colormovies.models.MovieResponse
+import com.raywenderlich.colormovies.models.Review
+import com.raywenderlich.colormovies.service.NYTimesReviews
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity

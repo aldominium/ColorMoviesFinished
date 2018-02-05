@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Razeware LLC
+ * Copyright (c) 2018 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,8 +28,25 @@
  * THE SOFTWARE.
  */
 
-package aldominium.com.colormovies.models
+package com.raywenderlich.colormovies.service
 
-data class Link(val type: String,
-                val url: String,
-                val suggested_link_text: String)
+import com.raywenderlich.colormovies.models.MovieResponse
+import retrofit2.Call
+import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
+
+object NYTimesReviews {
+  private val service: NYTimesApi
+  private val baseURL = "https://api.nytimes.com/svc/movies/v2/reviews/search.json/"
+
+  init {
+    val retrofit = Retrofit.Builder()
+        .baseUrl(baseURL)
+        .addConverterFactory(MoshiConverterFactory.create())
+        .build()
+
+    service = retrofit.create(NYTimesApi::class.java)
+  }
+
+  fun getReviews(): Call<MovieResponse> = service.getReviews()
+}

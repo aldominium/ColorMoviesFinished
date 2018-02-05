@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Razeware LLC
+ * Copyright (c) 2018 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,17 +28,16 @@
  * THE SOFTWARE.
  */
 
-package aldominium.com.colormovies
+package com.raywenderlich.colormovies.models
 
-import aldominium.com.colormovies.models.MovieResponse
-import aldominium.com.colormovies.models.Review
-import org.json.JSONArray
-import org.json.JSONObject
-
-fun IntArray.getRandomElement(): Int = get((Math.random() * size).toInt())
-
-fun JSONArray.getRandomElement(): JSONObject = getJSONObject((Math.random() * 20).toInt())
-
-fun <T> Array<T>.getRandomElement(): T = this[(Math.random() * size).toInt()]
-
-fun MovieResponse.getRandomElement(): Review = results[(Math.random() * results.size).toInt()]
+data class Review(val display_title: String,
+                  val mpaa_rating: String,
+                  val critics_pick: Int,
+                  val byline: String,
+                  val headline: String,
+                  val summary_short: String,
+                  val publication_date: String,
+                  val opening_date: String,
+                  val date_updated: String,
+                  val link: Link,
+                  val multimedia: Multimedia)

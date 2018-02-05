@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Razeware LLC
+ * Copyright (c) 2018 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,13 +28,8 @@
  * THE SOFTWARE.
  */
 
-package aldominium.com.colormovies.service
+package com.raywenderlich.colormovies.models
 
-import aldominium.com.colormovies.models.MovieResponse
-import retrofit2.Call
-import retrofit2.http.GET
-
-interface NYTimesApi {
-  @GET("svc/movies/v2/reviews/search.json?api-key=<key>")
-  fun getReviews(): Call<MovieResponse>
-}
+data class Link(val type: String,
+                val url: String,
+                val suggested_link_text: String)
